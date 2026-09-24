@@ -1,18 +1,24 @@
-//another text 
-//bro text 
+ 
+  let s={
+    name:"karthik",
+    id:24
+} 
 
-function kar(a){
-    return function(b){
-        return function(c){
-            return a+b+c;
+if(!Function.prototype.bind){
+    Function.prototype.bind=function(context,...args){
+        let display=this;
+
+        return function(){
+         display.call(context,...args);
         }
     }
 }
-
-let s=kar(24);
-let a=s(35);
-console.log(a(26))
-
+function bros(name,age){
+console.log("name is "+name+" and age is "+age)
+}
+let p=bros.bind(s,"karthik",45)
+p()
+ 
 function bro(a){
     return function(b){
         return function(c){

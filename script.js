@@ -1,69 +1,18 @@
-import { PI as L,add as a} from "./bro.js";
-
-console.log(L);
-console.log(a(59,23))
-if(!Array.prototype.maps){
-    Array.prototype.maps=function(call){
-        let sa=[];
-        for(let i=0;i<this.length;i++){
-            sa.push(call(this[i]));
-        }
-        return sa;
-    }
+function Animal(name){
+    this.name = name;
 }
-
-function kar(a){
-   return a*3;
+Animal.prototype.speak = function(){
+    console.log(this.name + ' makes a noise.');
 }
-let aas=[9,23,14,74]
-let p=aas.maps(kar)
-
-console.log(p)
-
-if(!Array.prototype.filter){
-     Array.prototype.filter=function(call){
-        let sa=[];
-        for(let i=0;i<this.length;i++){
-            sa.push(call(this[i]));
-        }
-        return sa;
-    }
+function Dog(name, breed){
+    Animal.call(this, name);
+    this.breed = breed;
 }
-
-let as=[9,23,14,74]
-let ap=as.filter(kaar)
-
-console.log(ap)
-
-
- let s={
-    name:"karthik",
-    id:24
+Dog.prototype.speak = function(){
+    console.log(this.name + ' barks.');
 }
-if(!Function.prototype.bind){
-    Function.prototype.bind=function(context,...args){
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;    
 
-     let fn = this;
-      return function(){
-        fn.call(context,...args);
-        
-      }
-     }
-}
-function bro(college, roll){
-    console.log("college is "+college+" and roll number is "+roll)
-
-}
-
-let sa=bro.bind(s,"MRITS",34)
-
-sa()
- 
-
-function kaar(a){
-   return a%2==0?0:a;
-}
-
-
-let sd=new Function('a','b','return a+b');
-console.log(sd(34,34))
+let s=new Animal('Rex');
+s.speak(); // Output: Rex makes a noise.
