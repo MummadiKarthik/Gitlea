@@ -1,2 +1,2 @@
 Bro this is a text file and we are reverting a  commit
-Bro this is a text file and we are fetching and pulling
+ 
