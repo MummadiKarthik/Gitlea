@@ -6,3 +6,6 @@ function kar(){
     },100)
 }
 kar()
+
+let s=(a,b)=>a+b;
+console.log(s(24,34))
