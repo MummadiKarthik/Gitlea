@@ -1,1 +1,1 @@
-this is anothet text file
+hey this is commit and we are reverting it
