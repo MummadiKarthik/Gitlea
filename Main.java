@@ -33,6 +33,8 @@ public class Main {
         MyThread t1 = new MyThread(obj);
         MyThread2 t2 = new MyThread2(obj);
         t1.start();
+
         t2.start();
+        System.out.println("Thread 1 is alive: " + t1.isAlive());
     }
 }
