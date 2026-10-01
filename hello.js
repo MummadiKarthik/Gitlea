@@ -30,12 +30,4 @@ function bro(a){
 
 }
 bro(24)(24)(24)
- function kaar(call){
-    let a=24;
-    let b=34;
-    call(a,b)
-}
-function bar(a,b){
-    console.log(a+b)
-}
-kaar(bar)
+ 
